@@ -1,0 +1,9 @@
+# ninja log v5
+0	114	6971344199655136	CMakeFiles/symbolic_constant.dir/main.c.obj	ab853a6011237f67
+116	231	6971344200793503	symbolic_constant.exe	9891defbf7ff81a9
+3	85	6971345312142095	CMakeFiles/symbolic_constant.dir/main.c.obj	ab853a6011237f67
+85	192	6971345313198016	symbolic_constant.exe	9891defbf7ff81a9
+3	116	6971346554253382	CMakeFiles/symbolic_constant.dir/main.c.obj	ab853a6011237f67
+118	253	6971346555563709	symbolic_constant.exe	9891defbf7ff81a9
+2	93	6971347179642379	CMakeFiles/symbolic_constant.dir/main.c.obj	ab853a6011237f67
+94	209	6971347180757549	symbolic_constant.exe	9891defbf7ff81a9
