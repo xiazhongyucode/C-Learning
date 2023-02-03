@@ -1,0 +1,15 @@
+# ninja log v5
+1	84	6971362328409455	CMakeFiles/printf.dir/main.c.obj	5e90dde6fcbdc9fd
+86	200	6971362329519459	printf.exe	36a8d152115b2b39
+2	89	6971363446208602	CMakeFiles/printf.dir/main.c.obj	5e90dde6fcbdc9fd
+90	198	6971363447254635	printf.exe	36a8d152115b2b39
+2	77	6971364702766472	CMakeFiles/printf.dir/main.c.obj	5e90dde6fcbdc9fd
+77	178	6971364703726461	printf.exe	36a8d152115b2b39
+2	75	6971364787862016	CMakeFiles/printf.dir/main.c.obj	5e90dde6fcbdc9fd
+80	189	6971364788922015	printf.exe	36a8d152115b2b39
+2	74	6971365224116378	CMakeFiles/printf.dir/main.c.obj	5e90dde6fcbdc9fd
+75	174	6971365225091534	printf.exe	36a8d152115b2b39
+2	88	6971365685505020	CMakeFiles/printf.dir/main.c.obj	5e90dde6fcbdc9fd
+89	204	6971365686617094	printf.exe	36a8d152115b2b39
+3	77	6971366421678500	CMakeFiles/printf.dir/main.c.obj	5e90dde6fcbdc9fd
+78	178	6971366422658478	printf.exe	36a8d152115b2b39

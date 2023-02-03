@@ -1,0 +1,3 @@
+C:/Users/32335/Documents/GitHub/C-Learning/cast/cmake-build-debug/CMakeFiles/cast.dir
+C:/Users/32335/Documents/GitHub/C-Learning/cast/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/32335/Documents/GitHub/C-Learning/cast/cmake-build-debug/CMakeFiles/rebuild_cache.dir
