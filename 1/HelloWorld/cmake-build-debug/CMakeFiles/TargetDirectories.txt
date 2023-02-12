@@ -1,0 +1,3 @@
+C:/Users/32335/Documents/GitHub/C-Learning/1/HelloWorld/cmake-build-debug/CMakeFiles/HelloWorld.dir
+C:/Users/32335/Documents/GitHub/C-Learning/1/HelloWorld/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/32335/Documents/GitHub/C-Learning/1/HelloWorld/cmake-build-debug/CMakeFiles/rebuild_cache.dir
