@@ -31,5 +31,9 @@
 *.out
 *.app
 
-# add
+# addition
 cmake-build-debug/
+.idea/
+*.gitignore
+*.xml
+*.iml

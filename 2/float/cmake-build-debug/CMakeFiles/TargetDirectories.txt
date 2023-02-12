@@ -1,3 +1,0 @@
-C:/Users/32335/Documents/GitHub/C-Learning/2/float/cmake-build-debug/CMakeFiles/float.dir
-C:/Users/32335/Documents/GitHub/C-Learning/2/float/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/32335/Documents/GitHub/C-Learning/2/float/cmake-build-debug/CMakeFiles/rebuild_cache.dir
