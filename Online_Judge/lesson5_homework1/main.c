@@ -1,15 +1,17 @@
 #include <stdio.h>
-
+//读取一堆整型数，统计2出现的次数
 int main() {
-    int N;
-    int a[100];
-    int count = 0;
-    scanf("%d", &N);
-    for (int i = 0; i < N; i++) {
-        scanf("%d", &a[i]);
+    int element_count;//元素个数
+    int array[100];
+    scanf("%d",&element_count);
+    int i;
+    for(i=0;i<element_count;i++){
+        scanf("%d",&array[i]);//循环读取多个整型元素
     }
-    for (int i = 0; i < N; i++) {
-        if (a[i] == 2) {
+    //判断整型数组中2出现的次数
+    int count=0;//记录2出现的次数
+    for(i=0;i<element_count;i++){
+        if(array[i]==2){
             count++;
         }
     }
