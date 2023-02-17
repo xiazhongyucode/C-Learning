@@ -1,6 +1,8 @@
-#include <iostream>
+#include <stdio.h>
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    bool a = true;
+    bool b = false;
+    printf("a = %d, b = %d\n", a, b);
     return 0;
 }
