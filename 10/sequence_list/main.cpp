@@ -1,5 +1,5 @@
 #include <stdio.h>
-//顺序表的初始化及插入操作实战
+
 #define MaxSize 50
 typedef int ElemType;//让顺序表存储其他类型元素时，可以快速完成代码修改
 typedef struct {
@@ -35,6 +35,32 @@ void PrintList(SqList L) {
     printf("\n");
 }
 
+//删除顺序表中的元素，i是要删除的元素的位置，e是为了获取被删除的元素的值
+bool ListDelete(SqList &L, int i, ElemType &e) {
+    //判断删除的元素的位置是否合法
+    if (i < 1 || i > L.length) {
+        return false;//一旦走到return，函数就结束了
+    }
+    e = L.data[i - 1];//首先保存要删除元素的值
+    int j;
+    for (j = i; j < L.length; j++) {//往前移动元素
+        L.data[j - 1] = L.data[j];
+    }
+    L.length--;//顺序表长度减1
+    return true;
+}
+//查找某个元素的位置，找到了就会返回对应位置，没找到就返回0
+int LocateElem(SqList L,ElemType element){
+    int i;
+    for(i=0;i<L.length;i++){
+        if(element==L.data[i]){
+            return i+1;//因为i是数组的下标，加1以后才是顺序表的下标
+        }
+    }
+    return 0;//循环结束没找到
+}
+
+//顺序表的初始化及插入操作实战
 int main() {
     SqList L;//定义一个顺序表，变量L
     bool ret;//ret用来装函数的返回值
@@ -48,6 +74,24 @@ int main() {
         PrintList(L);
     } else {
         printf("insert sqlist failed\n");
+    }
+    printf("---------------------\n");
+    ElemType del;//删除的元素存入del中
+    ret = ListDelete(L, 1, del);
+    if (ret) {
+        printf("delete sqlist success\n");
+        printf("del element = %d\n", del);
+        PrintList(L);//顺序表打印
+    } else {
+        printf("delete sqlist failed\n");
+    }
+    int pos;//存储元素位置
+    pos=LocateElem(L,60);
+    if(pos){
+        printf("find this element\n");
+        printf("element pos = %d\n",pos);
+    } else{
+        printf("don't find this element");
     }
     return 0;
 }
