@@ -39,7 +39,7 @@ void list_tail_insert(LNode *&L) {
         r = s;//r要指向新的尾部
         scanf("%d", &x);
     }
-    r->next=NULL;//让尾结点的next为NULL
+    r->next = NULL;//让尾结点的next为NULL
 }
 
 void print_list(LinkList L) {
@@ -52,42 +52,61 @@ void print_list(LinkList L) {
 }
 
 //按位置查找
-LinkList GetElem(LinkList L,int SearchPos){
-    int j=0;
-    if(SearchPos<0){
+LinkList GetElem(LinkList L, int SearchPos) {
+    int j = 0;
+    if (SearchPos < 0) {
         return NULL;
     }
-    while (L&&j<SearchPos){
-        L=L->next;
+    while (L && j < SearchPos) {
+        L = L->next;
         j++;
     }
     return L;
 }
+
 //按值查找
-LinkList LocateElem(LinkList L,ElemType SearchVal){
-    while (L){
-        if(L->data==SearchVal){//如果找到对应的值，就返回那个结点的地址
+LinkList LocateElem(LinkList L, ElemType SearchVal) {
+    while (L) {
+        if (L->data == SearchVal) {//如果找到对应的值，就返回那个结点的地址
             return L;
         }
-        L=L->next;
+        L = L->next;
     }
     return NULL;
 }
+
+//i代表插入到第几个位置
+bool ListFrontInsert(LinkList L, int i, ElemType InsertVal) {
+    LinkList p = GetElem(L, i - 1);
+    if (NULL == p) {
+        return false;
+    }
+    LinkList q;
+    q = (LinkList) malloc(sizeof(LNode));//为新结点申请空间
+    q->data = InsertVal;
+    q->next = p->next;
+    p->next = q;
+    return true;
+}
+
 int main() {
-    LinkList L,search;//L是链表头指针，是结构体指针类型
+    LinkList L, search;//L是链表头指针，是结构体指针类型
 //    list_head_insert(L);//输入数据可以为3 4 5 6 7 9999，头插法新建链表
     list_tail_insert(L);
     print_list(L);//链表打印
-    //按位置查找
-    search=GetElem(L,2);
-    if(search!=NULL){
-        printf("Succeed in searching by serial number\n");
-        printf("%d\n",search->data);
-    }
-    search=LocateElem(L,6);//按值查询
-    if(search!=NULL){
-        printf("Search by value succeeded\n");
-        printf("%d\n",search->data);
-    }
+//    //按位置查找
+//    search=GetElem(L,2);
+//    if(search!=NULL){
+//        printf("Succeed in searching by serial number\n");
+//        printf("%d\n",search->data);
+//    }
+//    search=LocateElem(L,6);//按值查询
+//    if(search!=NULL){
+//        printf("Search by value succeeded\n");
+//        printf("%d\n",search->data);
+//    }
+    bool ret;
+    ret = ListFrontInsert(L, 10, 99);//新结点插入第i个位置
+    print_list(L);
     return 0;
 }
