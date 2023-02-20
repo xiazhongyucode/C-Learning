@@ -9,6 +9,7 @@ typedef struct LNode {
 
 //LNode*是结构体指针，和LinkList完全等价的
 //输入3,4,5,6,7,9999
+//头插法来新建链表
 void list_head_insert(LNode *&L) {
     L = (LinkList) malloc(sizeof(LNode));//申请头结点空间，头指针指向头结点
     L->next = NULL;
@@ -50,11 +51,43 @@ void print_list(LinkList L) {
     printf("\n");
 }
 
-//头插法来新建链表
+//按位置查找
+LinkList GetElem(LinkList L,int SearchPos){
+    int j=0;
+    if(SearchPos<0){
+        return NULL;
+    }
+    while (L&&j<SearchPos){
+        L=L->next;
+        j++;
+    }
+    return L;
+}
+//按值查找
+LinkList LocateElem(LinkList L,ElemType SearchVal){
+    while (L){
+        if(L->data==SearchVal){//如果找到对应的值，就返回那个结点的地址
+            return L;
+        }
+        L=L->next;
+    }
+    return NULL;
+}
 int main() {
-    LinkList L;//L是链表头指针，是结构体指针类型
+    LinkList L,search;//L是链表头指针，是结构体指针类型
 //    list_head_insert(L);//输入数据可以为3 4 5 6 7 9999，头插法新建链表
     list_tail_insert(L);
     print_list(L);//链表打印
+    //按位置查找
+    search=GetElem(L,2);
+    if(search!=NULL){
+        printf("Succeed in searching by serial number\n");
+        printf("%d\n",search->data);
+    }
+    search=LocateElem(L,6);//按值查询
+    if(search!=NULL){
+        printf("Search by value succeeded\n");
+        printf("%d\n",search->data);
+    }
     return 0;
 }
