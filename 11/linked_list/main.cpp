@@ -91,13 +91,13 @@ bool ListFrontInsert(LinkList L, int i, ElemType InsertVal) {
 
 //删除第i个位置的元素
 //删除时L是不会变的，所以不需要加引用
-bool ListDelete(LinkList L,int i){
-    LinkList p= GetElem(L,i-1);//拿到要删除结点的前一个结点
-    if(NULL==p){
+bool ListDelete(LinkList L, int i) {
+    LinkList p = GetElem(L, i - 1);//拿到要删除结点的前一个结点
+    if (NULL == p) {
         return false;
     }
-    LinkList q=p->next;//拿到要删除的结点指针
-    p->next=q->next;//断链
+    LinkList q = p->next;//拿到要删除的结点指针
+    p->next = q->next;//断链
     free(q);//释放被删除结点的空间
     return true;
 }
@@ -121,7 +121,7 @@ int main() {
 //    bool ret;
 //    ret = ListFrontInsert(L, 10, 99);//新结点插入第i个位置
 //    print_list(L);
-    ListDelete(L,4);//删除第4个位置的元素
+    ListDelete(L, 4);//删除第4个位置的元素
     print_list(L);
     return 0;
 }
