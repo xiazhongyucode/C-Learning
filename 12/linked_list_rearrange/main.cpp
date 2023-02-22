@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//2019年计算机学科专业基础(408)第41题单链表
 typedef int ElemType;
 typedef struct LNode {
     ElemType data;//数据域
