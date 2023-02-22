@@ -36,59 +36,60 @@ void print_list(LinkList L) {
 
 //按位置查找
 //查找第几个结点的值
-LinkList GetElem(LinkList L,int i){
-    if(0==i){//查找位置0，返回头指针
+LinkList GetElem(LinkList L, int i) {
+    if (0 == i) {//查找位置0，返回头指针
         return L;
     }
-    if(i<1){
+    if (i < 1) {
         return NULL;
     }
-    int j=0;
-    while (L&&j<i){//查找第0个，无法进入循环，所以就返回了L
-        L=L->next;
+    int j = 0;
+    while (L && j < i) {//查找第0个，无法进入循环，所以就返回了L
+        L = L->next;
         j++;
     }
     return L;
 }
 
 //往第i个位置插入
-bool ListFrontInsert(LinkList L,int i,ElemType InsertVal){
-    LinkList p= GetElem(L,i-1);
-    if(NULL==p){
+bool ListFrontInsert(LinkList L, int i, ElemType InsertVal) {
+    LinkList p = GetElem(L, i - 1);
+    if (NULL == p) {
         return false;
     }
-    LinkList q=(LinkList) malloc(sizeof(LNode));//给新结点申请空间
-    q->data=InsertVal;//新结点data赋值
-    q->next=p->next;
-    p->next=q;
+    LinkList q = (LinkList) malloc(sizeof(LNode));//给新结点申请空间
+    q->data = InsertVal;//新结点data赋值
+    q->next = p->next;
+    p->next = q;
     return true;
 }
 
 //删除第i个位置的元素
-bool ListDelete(LinkList L,int i){
-    LinkList p= GetElem(L,i-1);//查找删除位置的前驱结点
-    if(NULL==p){
+bool ListDelete(LinkList L, int i) {
+    LinkList p = GetElem(L, i - 1);//查找删除位置的前驱结点
+    if (NULL == p) {
         return false;//要删除的位置不存在
     }
-    LinkList q=p->next;
-    if(NULL==q){
+    LinkList q = p->next;
+    if (NULL == q) {
         return false;//要删除的位置不存在
     }
-    p->next=q->next;//断链
+    p->next = q->next;//断链
     free(q);//释放对应结点的空间
-    q=NULL;//为了避免野指针
+    q = NULL;//为了避免野指针
     return true;
 }
 
 int main() {
     LinkList L;
     list_tail_insert(L);
-    print_list(L);
+//    print_list(L);
     LinkList SearchElem;
-    SearchElem= GetElem(L,2);//获取第二个位置元素值
-    ListFrontInsert(L,2,99);
+    SearchElem = GetElem(L, 2);//获取第二个位置元素值
+    printf("%d\n", SearchElem->data);
+    ListFrontInsert(L, 2, 99);
     print_list(L);
-    ListDelete(L,4);
+    ListDelete(L, 4);
     print_list(L);
     return 0;
 }
