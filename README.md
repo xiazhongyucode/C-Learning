@@ -55,3 +55,7 @@
 ### 王道 Online Judge
 
 http://oj.lgwenda.com/
+
+### MinGW-w64
+
+https://sourceforge.net/projects/mingw-w64/files/
