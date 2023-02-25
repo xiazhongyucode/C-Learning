@@ -27,6 +27,24 @@ void PostOrder(BiTree p) {
     }
 }
 
+//层序遍历，层次遍历，广度优先遍历
+void LevelOrder(BiTree T) {
+    LinkQueue Q;//辅助队列
+    InitQueue(Q);//初始化队列
+    BiTree p;//存储出队的结点
+    EnQueue(Q, T);//树根入队
+    while (!IsEmpty(Q)) {
+        DeQueue(Q, p);//出队当前结点并打印
+        putchar(p->c);//等价于printf("%c",c);
+        if (p->lchild != NULL) {//左孩子不为空，就入队左孩子
+            EnQueue(Q, p->lchild);
+        }
+        if (p->rchild != NULL) {//右孩子不为空，就入队右孩子
+            EnQueue(Q, p->rchild);
+        }
+    }
+}
+
 int main() {
     BiTree pnew;//用来指向新申请的树结点
     BiTree tree = NULL;//tree是指向树根的，代表树
@@ -67,5 +85,7 @@ int main() {
     InOrder(tree);
     printf("\n----------PostOrder----------\n");//先打印左孩子，打印右孩子，最后打印父亲
     PostOrder(tree);
+    printf("\n----------LevelOrder----------\n");
+    LevelOrder(tree);
     return 0;
 }

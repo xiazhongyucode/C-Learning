@@ -19,4 +19,18 @@ typedef struct tag {
     BiTree p;//树的某一个结点的地址值
     struct tag *pnext;
 } tag_t, *ptag_t;
+
+//队列的结构体
+typedef BiTree ElemType;
+typedef struct LinkNode{
+    ElemType data;
+    struct LinkNode *next;
+}LinkNode;
+typedef struct {
+    LinkNode *front,*rear;//链表头 链表尾，也可以称为队头，队尾
+}LinkQueue;//先进先出
+void InitQueue(LinkQueue &Q);
+bool IsEmpty(LinkQueue Q);
+void EnQueue(LinkQueue &Q,ElemType x);
+bool DeQueue(LinkQueue &Q,ElemType &x);
 #endif //BINARY_TREE_FUNCTION_H
