@@ -85,7 +85,7 @@ int main() {
     InOrder(tree);
     printf("\n----------PostOrder----------\n");//先打印左孩子，打印右孩子，最后打印父亲
     PostOrder(tree);
-    printf("\n----------LevelOrder----------\n");
+    printf("\n----------LevelOrder----------\n");//层序遍历
     LevelOrder(tree);
     return 0;
 }
