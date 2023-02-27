@@ -42,7 +42,9 @@ int BinarySearch(SSTable L, ElemType key) {
         }
     }
     return -1;
-}//函数名中存储的是函数的入口地址，也是一个指针，是函数指针类型
+}
+
+//函数名中存储的是函数的入口地址，也是一个指针，是函数指针类型
 //left指针和right指针是指向数组中的任意两个元素
 //qsort规定如果left指针指向的值大于right指针指向的值，返回正值，小于，返回负值，相等返回0
 int compare(const void *left, const void *right) {
