@@ -103,6 +103,12 @@ void DeleteNode(BiTree &root,KeyType x){
         } else{//两边都不为空
             //一般的删除策略是左子树的最大数据 或 右子树的最小数据
             //代替要删除的结点（这里采用查找左子树最大数据来代替，最大数据是左子树的最右结点）
+            BiTree tempNode=root->lchild;
+            while (tempNode->rchild!=NULL){
+                tempNode=tempNode->rchild;
+            }
+            root->key=tempNode->key;//把tempNode对应的值替换到要删除的值的位置上
+            DeleteNode(root->lchild,tempNode->key);//在左子树中找到tempNode的值，把其删除
         }
     }
 }
@@ -115,7 +121,7 @@ int main() {
     InOrder(T);//中序遍历二叉查找树是由小到大的
     printf("\n");
     BiTree search, parent;
-    search = BST_Search(T, 40, parent);
+    search = BST_Search(T, 20, parent);
     if (search) {
         printf("find key %d\n", search->key);
     } else {
