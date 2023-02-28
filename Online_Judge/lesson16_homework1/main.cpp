@@ -7,6 +7,7 @@ typedef struct {
     ElemType *elem;//存储元素的起始地址
     int TableLen;//元素个数
 } SSTable;
+
 //用于申请空间，初始化ST.TableLen
 void ST_Init(SSTable &ST, int len) {
     ST.TableLen = len;
@@ -91,19 +92,19 @@ int main() {
     ElemType A[10];
     //从标准输入读取10个整型元素
     int i;
-    for(i=0;i<10;i++){
-        scanf("%d",&A[i]);
+    for (i = 0; i < 10; i++) {
+        scanf("%d", &A[i]);
     }
     //内存copy接口，当你copy整型数组，或者浮点型时，要用memcpy，不能用strcpy，初试考memcpy概率很低
-    memcpy(ST.elem,A, sizeof(A));//这是为了降低考试难度，每次数组数据固定而设计的
+    memcpy(ST.elem, A, sizeof(A));//这是为了降低考试难度，每次数组数据固定而设计的
 //    ST_print(ST);//方便调试，显示一下读取了标准输入后的，数组内数据
     BubbleSort(ST.elem, 10);
     ST_print(ST);//排序后再次打印
-    memcpy(ST.elem,A, sizeof(A));//为快速排序准备无序的数据
-    QuickSort(ST.elem,0,9);
+    memcpy(ST.elem, A, sizeof(A));//为快速排序准备无序的数据
+    QuickSort(ST.elem, 0, 9);
     ST_print(ST);//排序后再次打印
-    memcpy(ST.elem,A, sizeof(A));//为插入排序准备无序的数据
-    InsertSort(ST.elem,10);
+    memcpy(ST.elem, A, sizeof(A));//为插入排序准备无序的数据
+    InsertSort(ST.elem, 10);
     ST_print(ST);
     return 0;
 }
