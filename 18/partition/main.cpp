@@ -17,25 +17,25 @@ int setPartition(int a[], int n) {
                 a[high] = a[low];
         }//end of while(low<high)
         a[low] = pivotkey;//把分割值放到对应的位置
-        if(low==k-1){//如果枢轴是第n/2小元素，划分成功
-            flag=0;
-        } else{
-            if(low<k-1){
-                low0=++low;//low0只是做暂存，为下次使用准备，这里我们++low后，low比分隔值大1
-                high=high0;//把上次暂存的high0拿过来
-            } else{
-                low=low0;//把上次暂存的low0拿过来
-                high0=--high;//high0只是做暂存，为下次使用准备
+        if (low == k - 1) {//如果枢轴是第n/2小元素，划分成功
+            flag = 0;
+        } else {
+            if (low < k - 1) {
+                low0 = ++low;//low0只是做暂存，为下次使用准备，这里我们++low后，low比分隔值大1
+                high = high0;//把上次暂存的high0拿过来
+            } else {
+                low = low0;//把上次暂存的low0拿过来
+                high0 = --high;//high0只是做暂存，为下次使用准备
             }
         }
     }
-    for(i=0;i<k;i++){
-        s1+=a[i];
+    for (i = 0; i < k; i++) {
+        s1 += a[i];
     }
-    for(i=k;i<n;i++){
-        s2+=a[i];
+    for (i = k; i < n; i++) {
+        s2 += a[i];
     }
-    return s2-s1;
+    return s2 - s1;
 }
 
 //2016年计算机学科专业基础(408)第43题划分子集
