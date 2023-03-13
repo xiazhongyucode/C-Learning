@@ -20,4 +20,4 @@ int main() {
 //gcc -m32 -masm=intel -S -fverbose-asm main.c
 //得到机器码需要执行的指令：
 //第一条：gcc -m32 -g -o main main.c (Mac一致)       gcc main.c -o main
-//第二条：objdump --source main.exe>main.dump (Mac去掉.exe后缀，写为main即可)
+//第二条：objdump --source main.exe > main.dump (Mac去掉.exe后缀，写为main即可)
