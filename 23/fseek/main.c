@@ -20,10 +20,10 @@ int main() {
         fclose(fp);
         return -1;
     }
-    pos= ftell(fp);
-    printf("now pos = %ld\n",pos);
-    memset(str,0, sizeof(str));//清空str
-    fread(str, sizeof(char), sizeof(str),fp);//读取
-    printf("str = %s\n",str);
+    pos = ftell(fp);
+    printf("now pos = %ld\n", pos);
+    memset(str, 0, sizeof(str));//清空str
+    fread(str, sizeof(char), sizeof(str), fp);//读取
+    printf("str = %s\n", str);
     return 0;
 }
